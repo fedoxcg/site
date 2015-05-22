@@ -1,15 +1,7 @@
 var express = require('express');
+var fortune = require('./lib/fortune.js');
 
 var app = express();
-
-//Random coockies da visualizzare nel sito
-var fortunes = [
-	"Conquista le tue paure oppure loro conquisteranno te",
-	"I fiumi hanno bisono di molle",
-	"Non temere quello che non conosci",
-	"Avrai una piacevole sorpresa",
-	"Ogni volta che è possibile, falla semplice",
-];
 
 //Impostazione del rendering engine (mustache)
 var handlebars = require('express3-handlebars').create({defaultLayout: 'main'});
@@ -31,8 +23,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/about', function(request, response) {
-	var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-	response.render('about', {fortune:randomFortune});
+	response.render('about', {fortune: fortune.getFortune()});
 });
 
 /* Questa è tutta la parte relativa al middleware che deve venire dopo
