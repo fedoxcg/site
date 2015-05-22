@@ -1,0 +1,15 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "Site to travel in Meadowlark",
+  "main": "meadowlark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Federico Cecchini",
+  "license": "GNU GPL",
+  "dependencies": {
+    "express": "~4.12.4",
+    "express3-handlebars": "~0.5.2"
+  }
+}
